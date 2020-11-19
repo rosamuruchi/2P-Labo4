@@ -1,0 +1,17 @@
+<app-barra></app-barra>
+<div class="modal-content" >
+  <div *ngFor = "let a of mensajes">
+     <ul>
+        <li class = "me" *ngIf = "a.remitente == entidadLogueada.correo && a.salaNombre == sala">{{a.mensaje}}<br><label style="font-size: 60%;color: #34495e">{{a.fecha}} {{a.hora}}</label></li>
+         <li class = "him" *ngIf = "a.remitente != entidadLogueada.correo && a.salaNombre == sala">{{a.mensaje}} <br><label style="font-size: 60%;color:#34495e">Enviado por: {{a.remitente}}</label><br><label style="font-size: 60%;color:#34495e">{{a.fecha}} {{a.hora}}</label></li>
+    </ul>
+  </div>
+</div>
+<div class="footer">
+   <table class="table">
+       <tr>
+           <td><input type="text" class = "form-control" [(ngModel)] = "msj"></td>
+           <td><button type="button" class="btn btn-danger btn-lg btn-block" (click) = crearMsj()>Enviar</button></td>
+       </tr>
+   </table>
+</div>

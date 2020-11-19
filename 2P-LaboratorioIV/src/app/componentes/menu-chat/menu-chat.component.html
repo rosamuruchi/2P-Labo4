@@ -1,0 +1,7 @@
+<br>
+<div *ngIf = "mostrar;">
+  <div *ngFor = "let materia of materiasPertenecientes">
+     <button [routerLink] = "materia"  (click) = "mostrarDiv()" type="button" class="btn btn-danger" style="width:100%;">{{materia}} <i class="fas fa-comment"></i></button>
+     <br>
+  </div>
+</div>

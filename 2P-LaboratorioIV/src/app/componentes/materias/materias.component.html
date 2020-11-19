@@ -1,0 +1,69 @@
+<div class = "row">
+<div class="col-1"></div>
+<div class = "col-sm modal-dialog text center">
+        <div class = " main-section">
+            <div class="modal-content">
+                <div class="text-center">
+                    <h1 class="text-white">Registro de materias</h1>
+                </div>
+               <div class = "col-12 form-input">
+                 <form>
+                     <div class="form-group">
+                        <i class="fas fa-pencil-alt"></i>
+                        <input type = "email" class = "form-control" name = "nombre" placeholder="Ingrese nombre de la materia" [(ngModel)] = "materia.nombre">
+                     </div>
+                     <div class="form-group">
+                            <i class="fas fa-list-ol"></i>
+                        <input type = "number" class = "form-control" name = "cupo" placeholder="Ingrese la cantidad de cupos"  [(ngModel)] = "materia.cupos" >
+                    </div>
+                    <div>
+                        <select class="custom-select" name="cuatrimestre" [(ngModel)] = "materia.cuatrimestre">
+                            <option selected value="1">1° Cuatrimestre</option>
+                            <option value = "2">2° Cuatrimestre</option>
+                            <option value = "3">3° Cuatrimestre</option>
+                            <option value = "4">4° Cuatrimestre</option>
+                            <option value = "5">5° Cuatrimestre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <br>
+                        <label class="text-white">Elija el profesor que dictara la materia</label>
+                        <select class="custom-select" name="profesor" [(ngModel)] = "materia.profesor">
+                           <option [value] = "item.correo" *ngFor = "let item of profesores">{{item.correo}}</option>
+                        </select>
+                    </div>
+                    <br>
+                    <app-mi-captcha (verificar) = verificar($event)></app-mi-captcha>
+                    <button type = "submit" class="btn btn-success" (click) = "agregarMateria()" [disabled] = "disabled">Registrar materia</button>
+                 </form>
+                 <div *ngIf = "mostrar2">
+                    <img src = "../../../assets/loading.gif" width="70" height="70" class="centrarSpinner">
+                  </div>
+               </div>
+            </div>
+        </div>
+</div>
+<div class="col-sm">
+<table class="table" id = "miTabla">
+  <thead>
+    <tr style = "background-color: #434e5a;color:white">
+      <th>Nombre</th>
+      <th>Cuatrimestre</th>
+      <th>Cupos</th>
+      <th>Profesor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let item of materias" style="color:white">
+        <td>{{item.nombre}}</td>
+        <td>{{item.cuatrimestre}}°</td>
+        <td>{{item.cupos}}</td>
+        <td>{{item.profesor}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-descarga idHtml = "miTabla"></app-descarga>
+</div>
+
+
+

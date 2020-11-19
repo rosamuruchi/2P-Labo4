@@ -1,0 +1,28 @@
+<table class="table">
+   <tr style = "background-color: #434e5a;color:white">
+      <th>Nombre</th>
+       <th>Cuatrimestre</th>
+       <th>Cupos</th>
+       <th>Profesor</th>
+       <th>Acción</th>
+    </tr>
+    <tr *ngFor = "let item of materias">
+        <td>{{item.nombre}}</td>
+        <td>{{item.cuatrimestre}}°</td>
+        <td [innerHTML] = "item.cupos | colorCelda" style="background-color: white;">{{item.cupos}}</td>
+        <td>{{item.profesor}}</td>
+        <td><button class="btn btn-success" (click) = "inscribirse(item)" >Inscribirse</button></td>
+    </tr>
+</table>
+<div *ngIf = "mostrar;" class="alert alert-danger" role="alert" style="background-color: #4fd9c7;color:#daf1ff">{{msj}}</div>
+<table class="table">
+    <tr style = "background-color: #434e5a;color:white">
+       <th>Materias en las que estas inscripto</th>
+    </tr>
+    <tr *ngFor = "let item of materiasInsc">
+       <td>{{item.nombre}}</td>
+    </tr>
+</table>
+    
+   
+   

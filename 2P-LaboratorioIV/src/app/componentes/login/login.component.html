@@ -1,0 +1,32 @@
+<div class = "modal-dialog text center">
+        <div class = "col-sm-9 main-section">
+            <div class="modal-content">
+               <div class="col-12 user-img">
+                  <img src = "../../../assets/user.png">
+               </div>
+               <div class = "col-12 form-input">
+                 <form>
+                     <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type = "email" class = "form-control" name = "correo" placeholder="Ingrese su correo electrónico" [(ngModel)] = "entidad.correo">
+                     </div>
+                     <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input [type] = "tipo" class = "form-control" name = "clave" placeholder="Ingrese su contraseña"  [(ngModel)] = "entidad.clave">
+                        <span class = "fas fa-eye" (mouseover) = "clave('text')" (mouseout) = "clave('password')"></span>
+                    </div>
+                    <button type = "submit" class="btn btn-success" (click) = "iniciarSesion()" >Iniciar sesión</button>
+                 </form>
+                 <div class="col-12 forgot" *ngIf = "!mostrar2">
+                    <a href = "/registro">Aun no te registraste? haz Click aqui!</a>
+                </div>
+                <div *ngIf = "mostrar2">
+                        <img src = "../../../assets/loading.gif" width="70" height="70" class="centrarSpinner">
+                      </div>
+                </div>
+                <div class="alert alert-danger" role="alert" *ngIf = "mostrar" >
+                    {{msj}}
+                </div>
+            </div>
+        </div>
+    </div>

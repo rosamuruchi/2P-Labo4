@@ -1,0 +1,18 @@
+<table id="miTabla" class="table">
+  <thead>
+  <tr style = "background-color: #434e5a;color:white">
+    <th>Correo</th>
+    <th>Perfil</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let item of usuarios" style="color:white">
+      <td *ngIf = "perfil == item.perfil">{{item.correo}}</td>
+      <td *ngIf = "perfil == item.perfil">{{item.perfil}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-descarga idHtml = "miTabla"></app-descarga>
+
+
+

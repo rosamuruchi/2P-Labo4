@@ -1,0 +1,36 @@
+<!-- <div style="background-color: #434e5a;">
+        <nav class="navbar navbar-dark">
+            <a class="navbar-brand" href="/login" ><i class="fas fa-arrow-circle-left text-dange"></i> Cerrar Sesión</a>
+            <a class="navbar-brand" href="/login" style="left: 15%;position:absolute;"><i class="fas fa-arrow-circle-left text-dange"></i>Registro de materias</a>
+            <form class="form-inline" style="justify-content:space-around;">
+              <span class="navbar-brand"><i class="fas fa-user-check text-danger"></i> {{entidad.correo}}</span>
+            </form>
+        </nav>
+</div> -->
+<div style="background-color: #434e5a;">
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <button  type="button" class="navbar-toggle btn btn-danger" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse text-danger">
+      <br>
+      <div class="list-group" *ngIf = "esAdmin;">
+          <a href="/home/registrar-materia" class="list-group-item list-group-item-action"><i class="fas fa-edit"></i> Registrar Materias</a>
+          <a href="/home/usuarios" class="list-group-item list-group-item-action"><i class="fas fa-book"></i> Ver usuarios registrados</a>
+      </div>
+      <div class="list-group" *ngIf = "esProfesor;">
+          <a href="/home/materias-profesor" class="list-group-item list-group-item-action"><i class="fas fa-book"></i> Materias a cargo</a>
+      </div>
+      <div class="list-group" *ngIf = "esAlumno;">
+          <a href="/home/inscripcion-materia" class="list-group-item list-group-item-action"><i class="fas fa-edit"></i> Inscripción de materias</a>
+      </div>
+      <a href="/home/chat" class="list-group-item list-group-item-action"><i class="fas fa-comment"></i> Chat</a>
+      <a href="/login" class="list-group-item list-group-item-action"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+    </div>
+    <form class="form-inline" style="justify-content:space-around;">
+        <span class="navbar-brand" style="color:white"><i class="fas fa-user-check text-danger"></i> {{entidad.correo}}</span>
+    </form>
+  </nav>
+</div>

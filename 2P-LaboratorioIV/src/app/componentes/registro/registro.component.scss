@@ -1,0 +1,60 @@
+
+.main-section{
+    margin : 0 auto;
+    margin-top:130px;
+    padding: 0;
+}
+.modal-content{
+    background-color: #434e5a;
+    opacity: .9;
+    padding: 0 18px;
+    border-radius: 10px;
+}
+.user-img img{
+    height: 120px;
+    width: 120px;
+    left: 10%;
+}
+.user-img{
+    margin-top:-60px;
+    margin-bottom: 45px;
+    left: 28%;
+}
+.form-group{
+    margin-bottom: 25px;
+
+}
+.form-group input{
+    height: 42px;
+    border-radius: 5px;
+    border:0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding-left: 54px;
+}
+i{
+    position: absolute;
+    margin-top: 3.3%;
+    font-size : 120%;
+    left:7%
+}
+button{
+    width: 100%;
+    margin:5px 0 45px;
+    margin-top: 10%;
+}
+.centrarSpinner{
+    margin:10px auto;
+    display:block;
+    margin-top: -7%;
+}
+span{
+    position: absolute;
+    margin-top: -8.5%;
+    font-size : 120%;
+    right:7%;
+    color:gainsboro;
+}
+span:hover{
+    color : rgb(0, 217, 255)
+}

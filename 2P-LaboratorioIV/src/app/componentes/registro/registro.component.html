@@ -1,0 +1,39 @@
+<div class = "modal-dialog text center">
+    <div class = "col-sm-9 main-section">
+        <div class="modal-content">
+           <div class="col-12 user-img">
+              <img src = "../../../assets/user.png">
+           </div>
+           <div class = "col-12 form-input">
+             <form>
+                 <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type = "email" class = "form-control" name = "correo" placeholder="Ingrese un correo electrónico" [(ngModel)] = "entidad.correo">
+                 </div>
+                 <div class="form-group">
+                    <i class="fas fa-lock"></i>
+                    <input [type] = "tipo" class = "form-control" name = "clave" placeholder="Ingrese una contraseña"  [(ngModel)] = "entidad.clave">
+                    <span class = "fas fa-eye" (mouseover) = "clave('text')" (mouseout) = "clave('password')"></span>
+                </div>
+                <div>
+                    <select class="custom-select" name="perfil" [(ngModel)] = "entidad.perfil">
+                        <option selected value="alumno">Alumno</option>
+                        <option value = "profesor">Profesor</option>
+                        <option value="administrador">Administrador</option>
+                    </select> 
+                </div>
+                <br>
+                <app-mi-captcha (verificar) = verificar($event)></app-mi-captcha>
+                <button type = "submit" [disabled] = "disabled" class="btn btn-sucess" (click) = "agregarEntidad()" >Registrarme</button>
+             </form>
+             <div *ngIf = "mostrar2">
+                <img src = "../../../assets/loading.gif" width="70" height="70" class="centrarSpinner">
+              </div>
+           </div>
+           <div class="alert alert-danger" role="alert" *ngIf = "mostrar" style="background-color: #4fd9c7;color:#daf1ff">
+                {{msj}}
+           </div>
+        </div>
+    </div>
+</div>
+
