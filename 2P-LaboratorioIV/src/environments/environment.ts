@@ -12,14 +12,6 @@ export const environment = {
   storageBucket: "practicaangular-93baf.appspot.com",
   messagingSenderId: "308585381451",
   appId: "1:308585381451:web:c05750e19048c09985d7ce"
-    /*apiKey: "AIzaSyCb7QX3nigXgDPfy1HaCqrJ1uUIsw-35t0",
-    authDomain: "practica-4f721.firebaseapp.com",
-    databaseURL: "https://practica-4f721.firebaseio.com",
-    projectId: "practica-4f721",
-    storageBucket: "practica-4f721.appspot.com",
-    messagingSenderId: "764202692509",
-    appId: "1:764202692509:web:9f12fc08910b6e226e4974",
-    measurementId: "G-WVJTDDZM3Z"*/
   }
 };
 
