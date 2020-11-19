@@ -24,7 +24,7 @@
                 </div>
                 <br>
                 <app-mi-captcha (verificar) = verificar($event)></app-mi-captcha>
-                <button type = "submit" [disabled] = "disabled" class="btn btn-sucess" (click) = "agregarEntidad()" >Registrarme</button>
+                <button type = "submit" [disabled] = "disabled" class="btn btn-success" (click) = "agregarEntidad()" >Registrarme</button>
              </form>
              <div *ngIf = "mostrar2">
                 <img src = "../../../assets/loading.gif" width="70" height="70" class="centrarSpinner">
